@@ -1,0 +1,22 @@
+.tag-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow: hidden;
+
+  &__tag {
+    margin: 0 4px;
+  }
+
+  &--left {
+    justify-content: flex-start;
+  }
+
+  &--justify {
+    justify-content: space-between;
+  }
+
+  &__separator {
+    margin: 0 4px;
+  }
+}

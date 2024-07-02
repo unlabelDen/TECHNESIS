@@ -1,28 +1,40 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-container>
+      <TagList :tags="tags" alignment="left" />
+      <TagList :tags="tags" alignment="justify" />
+      <div class="app-container">
+        <TagList :tags="tags" alignment="left" />
+      </div>
+      <div class="app-container inline-block">
+        <TagList :tags="tags" alignment="justify" />
+      </div>
+    </v-container>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TagList from "./components/TagList.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    TagList,
+  },
+  data() {
+    return {
+      tags: [
+        { text: "текст" },
+        { text: "больше текста", icon: "mdi-heart" },
+        { text: "ещё больше текста" },
+        { text: "Капибара", icon: "mdi-star" },
+        { text: "Капибарная капибара" },
+      ],
+    };
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+@import "./App.scss";
 </style>
